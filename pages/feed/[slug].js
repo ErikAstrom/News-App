@@ -12,7 +12,6 @@ export const Feed = ({ pageNumber, articles }) => {
           {articles.map((articles, index) => (
             <div key={index} className={styles.post}>
               <h1 onClick={() => (window.location.href = articles.url)}>
-                {" "}
                 {articles.title}{" "}
               </h1>
               <p>{articles.description}</p>
@@ -63,7 +62,7 @@ export const getServerSideProps = async (pageContext) => {
     };
   }
   const apiResponse = await fetch(
-    `https://newsapi.org/v2/top-headlines?country=se&pageSize=5&page${pageNumber}`,
+    `https://newsapi.org/v2/top-headlines?country=se&pageSize=5&pageçç${pageNumber}`,
     {
       headers: {
         Authorization: `Bearer ${process.env.NEXT_PUBLIC_NEWS_KEY}`,
